@@ -24,7 +24,13 @@ int saoAnagramas(char *str1, char *str2) {
     ordenarString(str1);
     ordenarString(str2);
 
-    return strcmp(str1, str2) == 0;
+    int tamanho = strlen(str1);
+    for (int i = 0; i < tamanho; i++) {
+        if (str1[i] != str2[i]) {
+            return 0;
+        }
+    }
+    return 1;
 }
 
 int main() {
